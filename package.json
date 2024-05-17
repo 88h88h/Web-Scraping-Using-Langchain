@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "dependencies": {
+    "html-to-text": "^9.0.5",
+    "jsdom": "^24.0.0",
+    "langchain": "^0.1.37"
+  }
+}
