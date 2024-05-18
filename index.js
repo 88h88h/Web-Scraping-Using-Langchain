@@ -1,5 +1,6 @@
 import { compile } from "html-to-text";
 import { RecursiveUrlLoader } from "langchain/document_loaders/web/recursive_url";
+import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 
 const url = "https://lbb.in/delhi";
 
@@ -19,4 +20,7 @@ const loader = new RecursiveUrlLoader(url, {
 
 const docs = await loader.load();
 
-console.log(docs);
+const splitter = new RecursiveCharacterTextSplitter();
+const output = await splitter.splitDocuments(docs);
+
+console.log(output);
